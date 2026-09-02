@@ -1,0 +1,27 @@
+{
+  "name": "63bot",
+  "version": "0.0.0",
+  "private": true,
+  "description": "63mmo 玩家 bot 工程：本地 TypeScript + tsdown 打包成单文件 IIFE + 一键上传网关（基于官方 bot-template 搭建，用法见 README）",
+  "type": "module",
+  "packageManager": "pnpm@10.22.0",
+  "scripts": {
+    "prepare": "node scripts/init-config.mjs",
+    "build": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && tsdown",
+    "push": "pnpm run build && tsx scripts/deploy.ts",
+    "upload": "tsx scripts/deploy.ts",
+    "dev": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@63mmo/api": "^0.1.1",
+    "@63mmo/sdk": "^0.1.1",
+    "@types/node": "^24.10.1",
+    "tsdown": "^0.22.14",
+    "tsx": "^4.23.13",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.22.0"
+  }
+}

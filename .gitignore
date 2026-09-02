@@ -1,0 +1,11 @@
+# 依赖
+node_modules/
+
+# 构建产物（上传的就是 dist/bot.js，不需要入库）
+dist/
+
+# 本地凭据（install 时自动生成；见 scripts/init-config.mjs）
+.secret.json
+
+# 本地智能体会话/计划文件（ZCode）
+.zcode/
